@@ -1,0 +1,18 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "lorem ipsum",
+      "post": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis nulla ex. Maecenas luctus rutrum odio. Nunc id lectus sagittis, vehicula libero vel, laoreet erat. Nullam ullamcorper fermentum felis id lacinia. Donec eleifend blandit tellus, eget consequat risus volutpat ac. Nunc quis risus sapien. Sed posuere ligula in dui viverra finibus. Integer a tempor nisi. Nullam viverra facilisis ex, vitae tristique turpis. Aenean cursus, turpis ut aliquet suscipit, dui ante sagittis neque, at pretium felis sem a odio. Aliquam tincidunt euismod justo id posuere. Etiam iaculis quis tortor nec condimentum. Donec rhoncus imperdiet magna vel rutrum. Aliquam hendrerit tristique eros id vulputate.",
+      "author": "loremipsum"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus scelerisque est tortor, vitae aliquet lorem faucibus in. Proin auctor, libero ut varius pulvinar, quam sapien euismod arcu, a dignissim quam orci sit amet dolor. Phasellus enim nisi, fermentum ac est a, vulputate tristique lacus. Integer imperdiet nisl mauris, vel aliquam.",
+      "postId": 1,
+      "author": "loremipsum"
+    }
+  ]
+}
