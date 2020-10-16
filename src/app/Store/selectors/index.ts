@@ -1,11 +1,10 @@
+// @ts-ignore
 import {Action, createFeatureSelector, createSelector, MemoizedSelector, Store} from '@ngrx/store';
 import * as store from '../';
 import {PostState} from '../reducers/posts.reducer';
 import {CommentState} from '../reducers/comments.reducer';
 import {Comments} from '../models/comments.model';
 import {Posts} from '../models/posts.model';
-import {types} from 'util';
-import {Actions} from '@ngrx/effects';
 
 export const postState: MemoizedSelector<store.State, PostState> = createFeatureSelector<PostState>('post');
 

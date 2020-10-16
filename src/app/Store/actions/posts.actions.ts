@@ -1,3 +1,4 @@
+// @ts-ignore
 import { Action } from '@ngrx/store';
 import { Posts } from '../models/posts.model';
 
