@@ -27,12 +27,6 @@
   ],
   "comments": [
     {
-      "id": 1,
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus scelerisque est tortor, vitae aliquet lorem faucibus in. Proin auctor, libero ut varius pulvinar, quam sapien euismod arcu, a dignissim quam orci sit amet dolor. Phasellus enim nisi, fermentum ac est a, vulputate tristique lacus. Integer imperdiet nisl mauris, vel aliquam.",
-      "postId": 1,
-      "author": "loremipsum"
-    },
-    {
       "id": "d59b1a02-d267-465c-a5c9-fcb3c09a4ba6",
       "body": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.",
       "postId": "33871f70-bfcb-47b4-9921-be3f8457dd49",

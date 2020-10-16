@@ -25,6 +25,7 @@ export class AppComponent {
   // @ts-ignore
   constructor(private store: Store<State>) {}
   add = false;
+  focusid: any;
   focus = false;
 
   posts: Observable<Array<Posts>>;
@@ -62,7 +63,8 @@ export class AppComponent {
   }
 
   // tslint:disable-next-line:typedef
-  toggleFocus(){
+  toggleFocus(postid){
+    this.focusid = postid;
     this.focus = !this.focus;
   }
 

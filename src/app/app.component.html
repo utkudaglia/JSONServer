@@ -20,8 +20,8 @@
               </span>
             </li>
           </ul>
-          <span (click)="toggleFocus()"> Add New Comment</span><br>
-          <form class="newCommentInput" *ngIf="focus">
+          <span (click)="toggleFocus(post.id)"> Add New Comment</span><br>
+          <form class="newCommentInput" *ngIf="post.id === this.focusid && focus">
             <input matInput #commentAuthor class="commentAuthor" placeholder="Author Name"><br>
             <textarea matInput #commentInput class="commentInput" placeholder="Comment"></textarea><br>
             <button mat-button class="postComment" (click)="postComment(commentInput.value, commentAuthor.value, post.id)">Post</button>
