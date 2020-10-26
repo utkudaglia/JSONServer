@@ -1,0 +1,79 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+}
+li{
+  list-style: none;
+}
+.body{
+   display: flex;
+   flex-direction: column;
+   max-height: 100vh;
+ }
+
+.blog-side{
+  display: flex;
+  flex: 0 0 70%;
+  flex-direction: column;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.div-posts{
+  display: flex;
+  flex-direction: column;
+  padding-top: 2%;
+}
+.posts{
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2%;
+}
+.posts > a {
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+}
+.posts:hover{
+  border: 1px solid #000000;
+  border-radius: 10px;
+}
+.posts:hover > a {
+  visibility: visible;
+}
+.post-title{
+  font-weight: bold;
+  font-size: 16px;
+  padding-bottom: 1%;
+}
+.post{
+  text-indent: 50px;
+}
+.post-author{
+  display: flex;
+  justify-content: flex-end;
+}
+.comment-wrapper{
+  width: 97%;
+  margin-left: auto;
+  padding-top: 2%;
+}
+
+.comment-author{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.delete-comment{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.delete-post{
+  display: flex;
+  justify-content: flex-end;
+}

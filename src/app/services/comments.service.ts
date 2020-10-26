@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Comments } from './Store/models/comments.model';
+import { Comments } from '../Store/models/comments.model';
 import { delay } from 'rxjs/operators';
 
 @Injectable({

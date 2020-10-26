@@ -6,7 +6,7 @@ import {LoadCommentAction, LoadCommentSuccessAction, LoadCommentFailureAction, C
   AddCommentAction, AddCommentSuccessAction, AddCommentFailureAction,
   DeleteCommentAction, DeleteCommentSuccessAction, DeleteCommentFailureAction} from '../actions/comments.action';
 import { of } from 'rxjs';
-import { CommentsService } from '../../comments.service';
+import { CommentsService } from '../../services/comments.service';
 
 @Injectable()
 export  class CommentEffects {
