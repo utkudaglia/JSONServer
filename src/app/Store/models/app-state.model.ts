@@ -1,7 +1,7 @@
-import {Comments} from './comments.model';
-import {Posts} from './posts.model';
+import {CommentsModel} from './comments.model';
+import {PostsModel} from './posts.model';
 
 export interface AppState{
-  readonly post: Array<Posts>;
-  readonly comment: Array<Comments>;
+  readonly post: Array<PostsModel>;
+  readonly comment: Array<CommentsModel>;
 }

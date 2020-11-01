@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { Comments } from '../models/comments.model';
+import { CommentsModel } from '../models/comments.model';
 
 export enum CommentActionTypes{
   LOAD_COMMENT = '[BLOG] Load Comment',
@@ -20,7 +20,7 @@ export class LoadCommentAction implements Action{
 export class LoadCommentSuccessAction implements Action{
   readonly type = CommentActionTypes.LOAD_COMMENT_SUCCESS;
 
-  constructor(public payload: Array<Comments>) {}
+  constructor(public payload: Array<CommentsModel>) {}
 }
 
 export class LoadCommentFailureAction implements Action{
@@ -32,13 +32,13 @@ export class LoadCommentFailureAction implements Action{
 export class AddCommentAction implements Action{
   readonly type = CommentActionTypes.ADD_COMMENT;
 
-  constructor(public payload: Comments) {}
+  constructor(public payload: CommentsModel) {}
 }
 
 export class AddCommentSuccessAction implements Action{
   readonly type = CommentActionTypes.ADD_COMMENT_SUCCESS;
 
-  constructor(public payload: Comments) {}
+  constructor(public payload: CommentsModel) {}
 }
 
 export class AddCommentFailureAction implements Action{

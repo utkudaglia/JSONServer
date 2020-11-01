@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Comments } from '../Store/models/comments.model';
+import { CommentsModel } from '../Store/models/comments.model';
 import { delay } from 'rxjs/operators';
 
 @Injectable({
@@ -14,11 +14,11 @@ export class CommentsService {
 
   // tslint:disable-next-line:typedef
   getComment() {
-    return this.http.get<Array<Comments>>(this.DB_COMMENTS_URL).pipe(delay(600));
+    return this.http.get<Array<CommentsModel>>(this.DB_COMMENTS_URL).pipe(delay(600));
   }
 
   // tslint:disable-next-line:typedef
-  addComment(comments: Comments) {
+  addComment(comments: CommentsModel) {
     return this.http.post(this.DB_COMMENTS_URL, comments).pipe(delay(500));
   }
 

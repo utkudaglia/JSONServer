@@ -7,7 +7,6 @@ import { LoadPostAction, PostActionTypes, LoadPostSuccessAction, LoadPostFailure
   DeletePostAction, DeletePostActionSuccess, DeletePostActionFailure } from '../actions/posts.actions';
 import { of } from 'rxjs';
 import { PostsService } from 'src/app/services/posts.service';
-import {EmbeddedTemplateAst} from '@angular/compiler';
 
 @Injectable()
 export class PostEffects{

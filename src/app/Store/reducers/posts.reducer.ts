@@ -1,8 +1,8 @@
 import {PostActionTypes, PostsAction} from '../actions/posts.actions';
-import {Posts} from '../models/posts.model';
+import {PostsModel} from '../models/posts.model';
 
 export interface PostState{
-  post: Posts[];
+  post: PostsModel[];
   loading: boolean;
   error: any;
 }
