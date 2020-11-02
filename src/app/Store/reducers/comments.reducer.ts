@@ -1,8 +1,8 @@
 import {CommentActionTypes, CommentsAction} from '../actions/comments.action';
-import {Comments} from '../models/comments.model';
+import {CommentsModel} from '../models/comments.model';
 
 export interface CommentState{
-  comment: Comments[];
+  comment: CommentsModel[];
   loading: boolean;
   error: any;
 }

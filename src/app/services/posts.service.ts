@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Posts} from '../Store/models/posts.model';
+import {PostsModel} from '../Store/models/posts.model';
 import {delay} from 'rxjs/operators';
 
 @Injectable({
@@ -13,11 +13,11 @@ export class PostsService {
 
   // tslint:disable-next-line:typedef
   getPost() {
-    return this.http.get<Array<Posts>>(this.DB_POSTS_URL).pipe(delay(500));
+    return this.http.get<Array<PostsModel>>(this.DB_POSTS_URL).pipe(delay(500));
   }
 
   // tslint:disable-next-line:typedef
-  addShopping(postItem: Posts) {
+  addShopping(postItem: PostsModel) {
     return this.http.post(this.DB_POSTS_URL, postItem).pipe(delay(500));
   }
 

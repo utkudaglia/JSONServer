@@ -122,5 +122,8 @@
       }
     }
   },
-  "defaultProject": "JSONServer"
+  "defaultProject": "JSONServer",
+  "cli": {
+    "analytics": "64253007-b9d3-41fc-a316-f1c2979169a3"
+  }
 }

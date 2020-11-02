@@ -3,28 +3,28 @@
   <div class="blog-side">
     <div class="div-posts">
       <ul class="post-wrapper">
-        <li *ngFor="let post of posts | async" class="posts" >
+        <li *ngFor="let post of postsHandler.posts$ | async" class="posts" >
           <span class="post-title">{{post.title}}</span>
           <span class="post">{{post.post}}</span>
           <span class="post-author">Author: {{post.author}}</span>
-          <span class="delete-post" (click)="deletePost(post.id)">Delete Post</span>
-          <a class="route-to-post" routerLink="/post" (click)="savePostId(post.id)" >Click to see more</a>
+          <span class="delete-post" (click)="postsHandler.deletePost(post.id)">Delete Post</span>
+          <a class="route-to-post" routerLink="/post" (click)="postsHandler.savePostId(post.id)" >Click to see more</a>
         </li>
       </ul>
     </div>
-    <button #addButton (click)="toggle()" color="white" mat-mini-fab value='add'>
-      <ng-container *ngIf="!add">
+    <button #addButton (click)="postsHandler.toggle()" color="white" mat-mini-fab value='add'>
+      <ng-container *ngIf="!postsHandler.add">
         <mat-icon class="add-icon">add</mat-icon>
       </ng-container>
-      <ng-container *ngIf="add">
+      <ng-container *ngIf="postsHandler.add">
         <mat-icon class="close-icon">close</mat-icon>
       </ng-container>
     </button>
-    <div *ngIf="add" class="new-post">
+    <div *ngIf="postsHandler.add" class="new-post">
       <textarea matInput #postTitle placeholder="Title"></textarea><br>
       <textarea matInput #postAuthor placeholder="Author"></textarea><br>
       <textarea matInput #post placeholder="Post"></textarea><br>
-      <button mat-button (click)="postPost(postTitle.value, post.value, postAuthor.value)">Post</button>
+      <button mat-button (click)="postsHandler.postPost(postTitle.value, post.value, postAuthor.value)">Post</button>
     </div>
   </div>
   <div class="right-side"></div>

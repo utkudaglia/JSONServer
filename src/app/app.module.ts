@@ -30,8 +30,8 @@ import { HeaderComponent } from './header/header.component';
   imports: [
     BrowserModule,
     StoreModule.forRoot({
-      posts: postReducer,
-      comments: commentReducer
+      post: postReducer,
+      comment: commentReducer
     }),
     EffectsModule.forRoot([PostEffects, CommentEffects]),
     StoreDevtoolsModule.instrument(),
