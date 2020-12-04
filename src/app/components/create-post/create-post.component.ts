@@ -1,0 +1,54 @@
+import {Component, OnInit, Output, ViewChild, EventEmitter} from '@angular/core';
+
+import {FormControl, FormGroup, NgForm, Validators} from '@angular/forms';
+import {Post} from '../../Store/models/new-post.model';
+import {first} from 'rxjs/operators';
+
+import {AuthService} from '../../services/Auth/auth.service';
+import {NewPostService} from '../../services/new-post/new-post.service';
+
+@Component({
+  selector: 'app-create-post',
+  templateUrl: './create-post.component.html',
+  styleUrls: ['./create-post.component.css']
+})
+export class CreatePostComponent implements OnInit {
+  @ViewChild("formDirective") formDirective: NgForm;
+  @Output() create: EventEmitter<any> = new  EventEmitter();
+  form: FormGroup;
+
+  isOpen = false;
+
+  constructor(
+    private authService: AuthService,
+    private postService: NewPostService
+  ) { }
+
+  ngOnInit(): void {
+    this.form = this.createFormGroup();
+  }
+
+  createFormGroup(): FormGroup {
+    return new FormGroup({
+      title: new FormControl("", [
+        Validators.required,
+        Validators.minLength(5)
+      ]),
+      body: new FormControl("", [
+        Validators.required,
+        Validators.minLength(10)
+      ]),
+    })
+  }
+
+  onSubmit(formData: Pick<Post, "title" | "body">): void{
+    this.postService
+      .createPost(formData, this.authService.userId)
+      .pipe(first())
+      .subscribe(() =>{
+      this.create.emit(null);
+    })
+    this.form.reset();
+    this.formDirective.resetForm();
+  }
+}

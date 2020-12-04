@@ -1,0 +1,22 @@
+<mat-toolbar>
+  <span class="home">
+    <a  routerLinkActive="active-link" routerLink="/">
+      <span>The Lorem Ipsum</span>
+    </a>
+  </span>
+  <span  class="login">
+    <a *ngIf="!isAuthenticated" routerLinkActive="active-link" routerLink="/login">
+      <span>Login</span>
+    </a>
+  </span>
+  <span  class="login">
+    <a *ngIf="isAuthenticated" (click)="logout()" routerLinkActive="active-link" routerLink="/login">
+      <span>Logout</span>
+    </a>
+  </span>
+  <span class="signup">
+    <a *ngIf="!isAuthenticated" routerLinkActive="active-link" routerLink="/signup">
+      <span>Signup</span>
+    </a>
+  </span>
+</mat-toolbar>

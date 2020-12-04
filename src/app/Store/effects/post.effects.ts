@@ -6,7 +6,7 @@ import { LoadPostAction, PostActionTypes, LoadPostSuccessAction, LoadPostFailure
   AddPostAction, AddPostSuccessAction, AddPostFailureAction,
   DeletePostAction, DeletePostActionSuccess, DeletePostActionFailure } from '../actions/posts.actions';
 import { of } from 'rxjs';
-import { PostsService } from 'src/app/services/posts.service';
+import { PostsService } from 'src/app/services/Post/posts.service';
 
 @Injectable()
 export class PostEffects{
