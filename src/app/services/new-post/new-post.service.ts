@@ -31,10 +31,7 @@ export class NewPostService {
       );
   }
 
-  createPost(
-    formData: Partial<Post>,
-    userId: Pick<User, "id">
-  ): Observable<Post> {
+  createPost(formData: Partial<Post>, userId: Pick<User, "id">): Observable<Post> {
     return this.http
       .post<Post>(
         this.url,

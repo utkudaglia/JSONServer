@@ -6,6 +6,10 @@ import {first} from 'rxjs/operators';
 
 import {AuthService} from '../../services/Auth/auth.service';
 import {NewPostService} from '../../services/new-post/new-post.service';
+import {AddPostAction} from '../../Store/actions/new-posts.actions';
+
+import {Store} from '@ngrx/store';
+import * as store from '../../Store';
 
 @Component({
   selector: 'app-create-post',
@@ -21,7 +25,8 @@ export class CreatePostComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private postService: NewPostService
+    private postService: NewPostService,
+    private appState$: Store<store.State>,
   ) { }
 
   ngOnInit(): void {
@@ -48,6 +53,18 @@ export class CreatePostComponent implements OnInit {
       .subscribe(() =>{
       this.create.emit(null);
     })
+    this.appState$.dispatch(
+      new AddPostAction(
+        new Post(
+        {
+          postId: 0,
+          title: formData.title,
+          body: formData.body,
+          user: this.authService.userId,
+          created: Date,
+        }
+      )
+    ))
     this.form.reset();
     this.formDirective.resetForm();
   }

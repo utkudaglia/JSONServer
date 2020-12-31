@@ -1,12 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 
 import {Observable} from 'rxjs';
+import {Store} from '@ngrx/store';
+import * as store from '../../Store';
 
 import { NewPostService} from '../../services/new-post/new-post.service';
 import {AuthService} from '../../services/Auth/auth.service';
 
 import {Post} from '../../Store/models/new-post.model';
 import {User} from '../../Store/models/user.model';
+import {AddPostAction, DeletePostAction, LoadPostAction} from '../../Store/actions/new-posts.actions';
+import * as postForm from '../create-post/create-post.component';
+
 
 @Component({
   selector: 'app-new-post',
@@ -19,11 +24,13 @@ export class NewPostComponent implements OnInit {
 
   constructor(
     private postService: NewPostService,
-    private authService: AuthService
+    private authService: AuthService,
+    private appState$: Store<store.State>
   ) { }
 
   ngOnInit(): void {
     this.posts$ = this.fetchAll();
+    this.appState$.dispatch(new LoadPostAction());
     this.userId = this.authService.userId;
   }
 
@@ -39,5 +46,8 @@ export class NewPostComponent implements OnInit {
     this.postService
       .deletePost(postId)
       .subscribe(() => (this.posts$ = this.fetchAll()));
+    console.log(postId);
+
+    this.appState$.dispatch(new DeletePostAction(postId));
   }
 }
